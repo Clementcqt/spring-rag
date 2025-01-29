@@ -119,7 +119,7 @@ jobs:
         with:
           timeout_seconds: 10
           max_attempts: 4
-          command: curl $(minikube fr.efrei.rag.service spring-rag --url)/samples/EFREI
+          command: curl $(minikube service spring-rag --url)/samples/EFREI
       - name: Log Kubernetes pods
         run: |
           kubectl logs $(kubectl get pods -l app=spring-rag -o name)
